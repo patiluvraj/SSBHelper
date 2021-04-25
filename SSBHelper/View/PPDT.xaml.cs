@@ -40,6 +40,18 @@ namespace SSBHelper.View
             txblkTotalPictures.Text = "Total Pictures : " + Utils.MAX_PPDT_PIC_COUNT;
             txblkTotalPictures.ToolTip = "Total Available Pictures count is "+ Utils.MAX_PPDT_PIC_COUNT;
             txtPictureno.Text = Utils.GetPictureNo(Utils.PPDT_Pictures.FirstOrDefault());
+            if (Utils.PPDT_Pictures.Count == 0)
+            {
+                txtMessgae.Visibility = Visibility.Visible;                
+                txtMessgae.Text = "There are no pictures in PPDT folder";
+                DisableAll();
+            }
+        }
+
+        private void DisableAll()
+        {
+            chkRandom.IsEnabled = false;
+            btnPlay.IsEnabled = false;
         }
 
         private async void BtnPlay_Click(object sender, RoutedEventArgs e)
