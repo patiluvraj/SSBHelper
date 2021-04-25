@@ -46,6 +46,11 @@ namespace SSBHelper.View
                 txtMessgae.Text = "There are no pictures in PPDT folder";
                 DisableAll();
             }
+            else
+            {
+                txtMessgae.Visibility = Visibility.Visible;
+                txtMessgae.Text = Common.Constants.PPDT_Rules;
+            }
         }
 
         private void DisableAll()
